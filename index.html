@@ -20,16 +20,16 @@
         <div class="container">
             <h1 v-model="title">{{ title }}</h1>
             <div class="container-input">
-                <input  id="text" type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
+                <input  id="text" type="text" v-model="todo" placeholder="Hey Man! What are you going to do?" @keydown.enter="addEvent">
                 <input class="aggiungi" id="button" type="submit" value="+ ADD" @click="addEvent"  >
             </div>
             <input class="delete" id="button" type="submit" value="DELETE ALL" @click="deleteallEvent">
             
             <ul>
                 
-                <li v-for="(element, index) in list">
-                    <a href="#">{{element}}</a>
-                <a href="#"> <i class="fas fa-trash-alt"  @click="deleteEvent(index)"></i></a>
+                <li v-for="(element, index) in list"  @click="event => event.target.classList.toggle('active')">
+                    <a  href="#">{{element}}</a>
+                    <a href="#"> <i class="fas fa-trash-alt"  @click="deleteEvent(index)"></i></a>
                 </li>
             </ul>
         </div>

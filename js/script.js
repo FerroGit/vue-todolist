@@ -2,6 +2,7 @@ var app = new Vue ({
     el: '#app',
 
     data: {
+        isActive: false,
         title: "TODO LIST",
         todo: "",
         list: []
@@ -10,7 +11,7 @@ var app = new Vue ({
         addEvent: function(){
 
             (this.list.includes(this.todo)) ? alert("hai gia inserito questo elemento") : this.list.push(this.todo),
-            this.todo= ''
+            this.todo= ""
         },
 
         deleteEvent: function(index){
@@ -19,6 +20,6 @@ var app = new Vue ({
         deleteallEvent: function () {
             this.list = []
         }
-    }
+    }    
 
 });
