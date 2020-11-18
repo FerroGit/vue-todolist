@@ -14,12 +14,11 @@
         <div class="conteiner">
 
             <input type="text" v-model="todo">
-            <input type="submit" value="add" @click="aggiungi" >
+            <input type="submit" value="add" @click="addEvent" >
             <ul>
                 <li v-for= "(element, index) in list">
                     {{ element }}
-
-                    <button @click="delete(index)">delete</button>
+                    <input type="submit" value="delete"  @click="deleteEvent(index)" >
                 </li>
             </ul>
         </div>

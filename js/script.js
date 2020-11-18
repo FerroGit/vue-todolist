@@ -6,12 +6,12 @@ var app = new Vue ({
         list: []
     },
     methods: {
-        aggiungi: function(){
-            this.list.push(this.todo)
+        addEvent: function(){
+            this.list.push(this.todo);
         },
 
-        delete: function(){
-            this.list.splice(this.todo(index))
+        deleteEvent: function(index){
+            this.$delete(this.list, index)
         }
     }
 
