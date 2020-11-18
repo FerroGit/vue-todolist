@@ -4,21 +4,30 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Todo List</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
     <div id="app">
+        
+        
 
-        <div class="conteiner">
-
-            <input type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
-            <input type="submit" value="add" @click="addEvent"  >
+        <div class="container">
+            <h1 v-model="title">{{ title }}</h1>
+            <div class="container-input">
+                <input type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
+                <input id="add" type="submit" value="add" @click="addEvent"  >
+            </div>
+            
             <ul>
-                <li v-for= "(element, index) in list">
-                    {{ element }}
-                    <input type="submit" value="delete"  @click="deleteEvent(index)" >
+
+                <li v-for="(element, index) in list">
+                    {{element}}
+                    <i class="fas fa-trash-alt" @click="deleteEvent(index)"></i>
                 </li>
             </ul>
         </div>

@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   font-family: 'Source Code Pro', monospace;
+    font-size: 20px;
+    margin: 0 20%;
+    padding-top: 100px;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    padding-bottom: 15px;
+}
+
+.container-input input{
+    max-width: 300px;
+}
+
+#inadd{
+    width: 100px;
+}
+
+ul{
+    
+    background-color: rgb(252, 205, 158);
+    padding: 0px 140px;
+    margin-top: 40px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px ;
+    border-bottom: 1px solid rgb(236, 15, 15);
+    color: rgb(108, 20, 143);
+}
+
+li i{
+    background-color: black;
+}
+
