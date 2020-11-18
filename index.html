@@ -16,8 +16,10 @@
             <input type="text" v-model="todo">
             <input type="submit" value="add" @click="aggiungi" >
             <ul>
-                <li v-for= "todo in list">
-                    {{ todo }}
+                <li v-for= "(element, index) in list">
+                    {{ element }}
+
+                    <button @click="delete(index)">delete</button>
                 </li>
             </ul>
         </div>
