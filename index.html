@@ -10,6 +10,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
     <div id="app">
@@ -19,22 +20,22 @@
         <div class="container">
             <h1 v-model="title">{{ title }}</h1>
             <div class="container-input">
-                <input type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
-                <input id="add" type="submit" value="add" @click="addEvent"  >
+                <input  id="text" type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
+                <input class="aggiungi" id="button" type="submit" value="+ ADD" @click="addEvent"  >
             </div>
+            <input class="delete" id="button" type="submit" value="DELETE ALL" @click="deleteallEvent">
             
             <ul>
-
+                
                 <li v-for="(element, index) in list">
-                    {{element}}
-                    <i class="fas fa-trash-alt" @click="deleteEvent(index)"></i>
+                    <a href="#">{{element}}</a>
+                <a href="#"> <i class="fas fa-trash-alt"  @click="deleteEvent(index)"></i></a>
                 </li>
             </ul>
         </div>
         
     </div>
-
-
     <script src='js/script.js'></script>
+
 </body>
 </html>
