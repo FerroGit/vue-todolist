@@ -13,8 +13,8 @@
 
         <div class="conteiner">
 
-            <input type="text" v-model="todo">
-            <input type="submit" value="add" @click="addEvent" >
+            <input type="text" v-model="todo" placeholder="new line" @keydown.enter="addEvent">
+            <input type="submit" value="add" @click="addEvent"  >
             <ul>
                 <li v-for= "(element, index) in list">
                     {{ element }}
