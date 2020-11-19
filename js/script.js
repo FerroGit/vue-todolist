@@ -2,8 +2,10 @@ var app = new Vue ({
     el: '#app',
 
     data: {
+        imgTitolo: "img/pen-logo.png",
         isActive: false,
-        title: "TODO LIST",
+        title: "NOTE YOUR BUSINESS",
+        trash:"img/trash.jpeg",
         todo: "",
         list: []
     },
