@@ -22,7 +22,7 @@ var app = new Vue ({
             this.list = []
         },
         active: function(index){
-                this.isActive = index         
+            this.isActive = index        
         }
 
 }
