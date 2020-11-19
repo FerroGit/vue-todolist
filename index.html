@@ -18,32 +18,38 @@
         
 
         <div class="container">
-            <div class="container-titolo">
-                <img :src="imgTitolo" alt="">
-                <H1 :class="title">{{ title }}</H1>
-                
-            </div>
-            <div class="container-input">
+            
+            <header>
 
-                <input  id="text" type="text" v-model="todo" placeholder="Hey Man! What are you going to do?" @keydown.enter="addEvent">
-                <input class="aggiungi" id="button" type="submit" value="+ ADD" @click="addEvent"  >
-           
-            </div>
-
-            <input class="delete" id="button" type="submit" value="DELETE ALL" @click="deleteallEvent">
-
-                <div class="container-task">
-                    <ul>
-                        <li v-for="(element, index) in list" :class="{ active: isActive }" @click="isActive = !isActive" >
-                            
-                            <a href="#">{{element}}</a>
-                            
-                            <a href="#"><i class="fas fa-trash-alt" @click="deleteEvent(index)"></i></a>
-                            
-                        </li>
-                    </ul>
+                <div class="container-titolo">
+                    <img :src="imgTitolo" alt="">
+                    <H1 :class="title">{{ title }}</H1>
                     
                 </div>
+                <div class="container-input">
+                    
+                    <input  id="text" type="text" v-model="todo" placeholder="Hey Man! What are you going to do?" @keydown.enter="addEvent">
+                    <input class="aggiungi" id="button" type="submit" value="+ ADD" @click="addEvent"  >
+                    
+                </div>
+                <div class="button-delete-all">
+                    <input class="delete" id="button" type="submit" value="DELETE ALL" @click="deleteallEvent">
+                </div>
+                
+            </header>
+                
+            <div class="container-task">
+                <ul>
+                    <li v-for="(element, index) in list" :class="{ active: isActive === active(index) }" @click="active(index)" >
+                            
+                        <a href="#">{{element}}</a>
+                            
+                        <a href="#"><i class="fas fa-trash-alt" @click="deleteEvent(index)"></i></a>
+                            
+                    </li>
+                </ul>
+                    
+            </div>
         </div>
         
     </div>
@@ -51,6 +57,11 @@
 
 </body>
 </html>
+
+
+
+
+
 
 
 

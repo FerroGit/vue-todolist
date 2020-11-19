@@ -2,12 +2,11 @@ var app = new Vue ({
     el: '#app',
 
     data: {
+        isActive: 0,
         imgTitolo: "img/pen-logo.png",
-        isActive: false,
         title: "NOTE YOUR BUSINESS",
-        trash:"img/trash.jpeg",
         todo: "",
-        list: []
+        list: [],
     },
     methods: {
         addEvent: function(){
@@ -21,7 +20,12 @@ var app = new Vue ({
         },
         deleteallEvent: function () {
             this.list = []
+        },
+        active: function(index){
+            this.isActive = (this.list , index)
         }
-    }    
+}
 
 });
+
+
