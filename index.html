@@ -40,7 +40,7 @@
                 
             <div class="container-task">
                 <ul>
-                    <li v-for="(element, index) in list" :class="{ active: isActive === active(index) }" @click="active(index)" >
+                    <li v-for="(element, index) in list" :class="{ 'active' : isActive === index }" :key=element.id @click="active(index)" >
                             
                         <a href="#">{{element}}</a>
                             
